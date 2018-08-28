@@ -1,0 +1,24 @@
+{
+  "id" : "21cad2f3-448b-4f6e-b0d2-22505c1fd04f",
+  "request" : {
+    "url" : "/credit-scores",
+    "method" : "POST",
+    "headers" : {
+      "Content-Type" : {
+        "matches" : "application/json.*"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$[?(@.['ssn'] == '12-34-5678')]"
+    } ]
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"creditScore\":\"HIGH\"}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "21cad2f3-448b-4f6e-b0d2-22505c1fd04f"
+}
